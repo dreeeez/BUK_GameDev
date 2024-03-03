@@ -11,9 +11,10 @@ config_version=5
 [application]
 
 config/name="Buk Game Dev"
+run/main_scene="res://level_1.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
 [rendering]
 
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"

@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://du8j887ofq65a"]
+
+[ext_resource type="Texture2D" uid="uid://dldkmyxchlrbk" path="res://icon.svg" id="1_jrt85"]
+[ext_resource type="PackedScene" uid="uid://ccuj14v4gkqst" path="res://steve.tscn" id="2_mfm7d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5v2dd"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2gkl"]
+size = Vector2(843, 128)
+
+[node name="Level1" type="Node2D"]
+
+[node name="Block4" type="RigidBody2D" parent="."]
+position = Vector2(779, 162)
+rotation = -0.970574
+gravity_scale = 0.5
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Block4"]
+texture = ExtResource("1_jrt85")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Block4"]
+shape = SubResource("RectangleShape2D_5v2dd")
+
+[node name="floor" type="StaticBody2D" parent="."]
+position = Vector2(593, 572)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="floor"]
+scale = Vector2(6.57813, 1)
+texture = ExtResource("1_jrt85")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_n2gkl")
+
+[node name="Steve" parent="." instance=ExtResource("2_mfm7d")]
+position = Vector2(265, 363)
